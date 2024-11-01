@@ -1,0 +1,7 @@
+{
+  "name": "ava_III",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
