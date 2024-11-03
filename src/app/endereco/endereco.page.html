@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>endereco</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">endereco</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <h1>Consulta de CEP</h1>
+    <input type="text" [(ngModel)]="cep" placeholder="Digite o CEP" />
+    <button (click)="getCepData(cep)">Buscar</button>
+
+    <div *ngIf="cepData">
+      <h2>Resultado da Consulta:</h2>
+      <p><strong>CEP:</strong> {{ cepData.cep }}</p>
+      <p><strong>Logradouro:</strong> {{ cepData.logradouro }}</p>
+      <p><strong>Complento:</strong> {{ cepData.complemento }}</p>
+      <p><strong>Bairro:</strong> {{ cepData.bairro }}</p>
+      <p><strong>Localidade:</strong> {{ cepData.localidade }}</p>
+      <p><strong>UF:</strong> {{ cepData.uf }}</p>
+      <p><strong>ibge:</strong> {{ cepData.ibge }}</p>
+      <p><strong>siafi:</strong> {{ cepData.siafi }}</p>
+      <p><strong>DDD:</strong> {{ cepData.ddd }}</p>
+    </div>
+
+    <div *ngIf="!cepData && cep">
+      <p>Nenhum dado encontrado para o CEP: {{ cep }}</p>
+    </div>
+  </div>
+
+
+
+</ion-content>
